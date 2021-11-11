@@ -1,0 +1,99 @@
+.header-index{
+    
+    .icon-title{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        animation-duration: 2s;
+        animation-name: aparecer;         
+    }
+    
+    @keyframes aparecer {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+    }
+     
+    .nav-index{
+        background-color: $colornav;
+        opacity: .5;
+        list-style: none;
+        padding: 0;
+        cursor: pointer;
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        .nav-index__ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            margin-top: 15px;
+            width: 75%;
+            
+            .nav-index__li{
+                background-color: $colornavli;
+                padding: 10px;
+                
+                &--importante{
+                    color: $colorimpor;
+                    text-decoration: none;
+                    padding: 20px;
+                    
+                    &:hover{
+                        background-color: $hoverbg;
+                        color: $hovercolor;
+                        border-radius: 10%;
+                        font-weight: bolder;
+                    }
+                }
+                &--activo{
+                    color: $colorimpor;
+                    text-decoration: none;
+                    padding: 20px;
+                    
+                    &:hover{
+                        background-color: $hoverbg;
+                        color: $hovercolor;
+                        border-radius: 10%;
+                        font-weight: bolder;
+                    }
+                }
+                &--relevante{
+                    color: $colorimpor;
+                    text-decoration: none;
+                    padding: 20px;
+                    &:hover{
+                        background-color: $hoverbg;
+                        color: $hovercolor;
+                        border-radius: 10%;
+                        font-weight: bolder;
+                    }
+                }
+                &--contacto{
+                    color: $colorimpor;
+                    text-decoration: none;
+                    padding: 20px;
+                    &:hover{
+                        background-color: $hoverbg;
+                        color: $hovercolor;
+                        border-radius: 10%;
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+}

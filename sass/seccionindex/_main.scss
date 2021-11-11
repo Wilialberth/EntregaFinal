@@ -1,0 +1,60 @@
+.main-index{
+    .main-index__empresa{
+    padding: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    color: $mainempre;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "titulo titulo"
+    "texto imagen";
+    .main-index__titulo{
+        text-decoration: none;
+        grid-area: titulo;
+        text-align: center;
+        margin: 2rem;
+    }
+    &--nombre{
+        font-weight: bolder;
+    }
+    
+          
+    .main-index__texto{
+        grid-area: texto;
+        text-align: justify;
+        font-family: 'Roboto', sans-serif;
+        color: colelabo;
+        
+    }
+    
+    .main-index__imagen{
+        grid-area: imagen;
+        align-self: center;
+        margin-left: 2rem;
+    }
+    
+    
+    }
+}
+.formulario{
+    width: 90%;
+    
+    .formulario-caja{
+        width: 90%;
+    }
+}
+@media (max-width: 425px){
+    .main-index{
+        display: flex;
+        flex-direction: column;
+        .main-index__titulo{
+            justify-content: center;
+            flex-direction: column;
+        }
+        &--nombre{
+            align-items: left;
+            flex-direction: column;
+        }
+    }
+}

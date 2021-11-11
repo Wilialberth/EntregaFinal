@@ -1,0 +1,461 @@
+$colorbody: #faebd7;
+$colornav: #d48721;
+$colornavli: #deb887;
+$colorimpor:#465d4b;
+$hoverbg: #bdb76b;
+$hovercolor:#f1f0e4;
+$mainempre:#000080;
+$colelabo:#000000;
+$footeraut:#362c2c;
+
+//variables pago
+$colbody:#3E888E;
+$colbgheafoot:#8EC8CD;
+$colbarra:#13282B;
+$colhover:#fff8dc;
+$colpagos:#84AEAA;
+$colpagtitu:#C04335;
+$colpagtexto:#000000;
+$colfooter:#cd853f;
+$colafooter:#13282B;
+$colfoothov:#f5f5f5;
+
+//variables productos
+$colheader: #ff7f50;
+
+@import"variables/variables";
+@import"seccionpago/body-pago";
+@import"seccionpago/header-pago";
+@import"seccionpago/contenedor-pago";
+@import"seccionpago/footer-pago";
+@import"seccionindex/body";
+@import"seccionindex/header";
+@import"seccionindex/main";
+@import"seccionindex/footer";
+@import"seccionproductos/body-productos";
+@import"seccionproductos/header-productos";
+@import"seccionproductos/main-productos";
+@import"seccionproductos/footer-productos";
+
+
+//pago
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body-pago{
+    background-color: $colbody;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header-pago{
+    background-color: $colbgheafoot;
+    width: 90%;
+    margin: 1.5rem auto;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+         
+    img{
+        width: 10%;
+        border-radius: 50%;
+        margin: 20px;
+    }
+    
+    nav{
+        margin: 0 1.5rem;
+        
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            li{
+                .barra{
+                    text-decoration: none;
+                    padding: 20px;
+                    color: $colbarra;
+                        &:hover{
+                            color: $colhover;
+                            text-decoration: underline;
+                        }
+                }
+            }
+        }
+    }
+}
+.contenedor-pago{
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 20px;
+    grid-template-areas: "header header"
+    "pagos pagos"
+    "footer footer";
+    justify-content: space-between;
+    flex-direction: row;
+    
+    .pagos{
+        background-color: $colpagos;
+        padding: 20px;
+        grid-column: pagos;
+        display: flex;
+        flex-direction: column;
+        align-items: center;       
+        .pagos__titulo{
+            text-align: center;
+            color: $colpagtitu;
+            font-weight: none;
+            font-size: 2rem;
+            animation-duration: 2s;
+            animation-name: aparecer;
+        }
+        @keyframes aparecer{
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0.8;
+            }
+            100%{
+                opacity: 1;
+            }
+
+        }
+        .pagos__texto{
+            margin: 10px;
+            color: $colpagtexto;
+            line-height: 2rem;
+        }
+        
+    }
+}
+
+.footer-pago{
+    background-color: $colbgheafoot;
+    color: $colfooter;
+    padding: 10px;
+    grid-area: footer;
+    margin: 15px 15px;
+    
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1.5rem auto;
+        li{
+            padding: 20px;
+            a{
+                text-decoration: none;
+                color: $colafooter;
+                font-size: 1.5rem;
+                &:hover{
+                    font-weight: bold;
+                    color: $colfoothov;
+                }
+            }
+        }
+    }
+}  
+
+
+ 
+//index
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: $colorbody;
+    font-family: 'Ubuntu', sans-serif;
+}
+.header-index{
+    
+    .icon-title{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        animation-duration: 2s;
+        animation-name: aparecer;         
+    }
+    
+    @keyframes aparecer {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+     }
+     
+    .nav-index{
+        background-color: $colornav;
+        opacity: .5;
+        list-style: none;
+        padding: 0;
+        cursor: pointer;
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        .nav-index__ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            margin-top: 15px;
+            width: 75%;
+            
+            .nav-index__li{
+                background-color: $colornavli;
+                padding: 10px;
+                
+                &--importante{
+                    color: $colorimpor;
+                    text-decoration: none;
+                    padding: 20px;
+                    
+                    &:hover{
+                        background-color: $hoverbg;
+                        color: $hovercolor;
+                        border-radius: 10%;
+                        font-weight: bolder;
+                    }
+                }
+                &--activo{
+                    color: $colorimpor;
+                    text-decoration: none;
+                    padding: 20px;
+                    
+                    &:hover{
+                        background-color: $hoverbg;
+                        color: $hovercolor;
+                        border-radius: 10%;
+                        font-weight: bolder;
+                    }
+                }
+                &--relevante{
+                    color: $colorimpor;
+                    text-decoration: none;
+                    padding: 20px;
+                    &:hover{
+                        background-color: $hoverbg;
+                        color: $hovercolor;
+                        border-radius: 10%;
+                        font-weight: bolder;
+                    }
+                }
+                &--contacto{
+                    color: $colorimpor;
+                    text-decoration: none;
+                    padding: 20px;
+                    &:hover{
+                        background-color: $hoverbg;
+                        color: $hovercolor;
+                        border-radius: 10%;
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.main-index{
+    .main-index__empresa{
+    padding: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    color: $mainempre;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "titulo titulo"
+    "texto imagen";
+    .main-index__titulo{
+        text-decoration: none;
+        grid-area: titulo;
+        text-align: center;
+        margin: 2rem;
+    }
+    &--nombre{
+        font-weight: bolder;
+    }
+    
+          
+    .main-index__texto{
+        grid-area: texto;
+        text-align: justify;
+        font-family: 'Roboto', sans-serif;
+        
+    }
+    
+    .main-index__imagen{
+        grid-area: imagen;
+        align-self: center;
+        margin-left: 2rem;
+    }
+     
+    }
+  
+}
+
+.formulario{
+    display: grid;
+    flex-direction: row;
+    margin-left: 5%;
+    border-radius: 10px;
+  
+} 
+
+
+.footer-index{
+    margin-top: 20px;
+    margin-bottom: 20px;  
+    margin-left: 30px;
+    opacity: 0.5;
+    
+    .footer-index__autor{
+    margin-top: 20px;
+    margin-bottom: 20px;  
+    margin-left: 10px;  
+    background-color: $colornav;
+    padding: 1.2rem;
+    
+    width: 90%;
+    color: $footeraut;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-weight: bold;
+    }
+    &--elaborado{
+        font-family: Arial, Helvetica, sans-serif;
+        color:$colelabo;
+        font-size: 1.5rem;
+
+             
+    }
+    
+    .footer-RRSS{
+        width: 2rem;
+        display: column;
+        justify-content: flex-start;
+        
+    }
+    .footer-RRSS__Redes{
+        width: 2.5rem;
+        opacity: 0.9;
+        justify-content: flex-start;
+    }
+}
+
+//productos
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body-productos{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f8ff;
+    background-image: url(/Img/Fondos/editado4.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header-productos{
+   margin: 1.5rem auto;   
+   justify-content: space-between;
+   align-items: center;
+   grid-area: header;
+  
+   
+    .container-fluid{
+        background-color: $colheader;
+        
+        
+        img{
+            width: 10%;
+            border-radius: 50%;
+            margin: 20px;
+        }
+    }
+}
+.main-productos{
+        
+    h2{
+        align-items: center;
+        text-align: center;
+    }
+        
+}
+ 
+#galeria{
+    .text-center{
+        margin-top: 20px;
+    }
+    .col-lg-4{
+        margin: 0;
+        padding: 25px;
+    }
+    img{
+        width: 100%;
+        height: 200px;
+        &:hover{
+            border: 3px solid #000000;
+        }
+    }
+}
+.footer-productos{
+    margin-top: 20px;
+    margin-bottom: 20px;  
+    margin-left: 30px;
+    opacity: 0.5;
+    .footer-productos__autor{
+        margin-top: 20px;
+        margin-bottom: 20px;  
+        margin-left: 30px;  
+        background-color: $colornav;
+        padding: 1.2rem;
+        width: 90%;
+        color: $colelabo;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        font-weight: bold;
+        &.elaborado{
+            font-family: Arial, Helvetica, sans-serif;
+            color:$colelabo;
+            font-size: 1.5rem;              
+        }
+    }
+    .footer-productos__RRSS{
+        width: 2rem;
+        display: column;
+        justify-content: flex-start;
+        
+    }
+    .footer-RRSS__Redes{
+        width: 2.5rem;
+        opacity: 0.8;
+        justify-content: flex-start;
+          
+    }
+    
+}

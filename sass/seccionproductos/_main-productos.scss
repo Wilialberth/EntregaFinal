@@ -1,0 +1,25 @@
+.main-productos{
+        
+    h2{
+        align-items: center;
+        text-align: center;
+    }
+        
+}
+ 
+#galeria{
+    .text-center{
+        margin-top: 20px;
+    }
+    .col-lg-4{
+        margin: 0;
+        padding: 25px;
+    }
+    img{
+        width: 100%;
+        height: 200px;
+        &:hover{
+            border: 3px solid $colpagtexto;
+        }
+    }
+}

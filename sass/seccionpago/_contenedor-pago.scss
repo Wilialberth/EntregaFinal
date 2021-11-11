@@ -1,0 +1,56 @@
+.contenedor-pago{
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 20px;
+    grid-template-areas: "header header"
+    "pagos pagos"
+    "footer footer";
+    justify-content: space-between;
+    flex-direction: row;
+    
+    .pagos{
+        background-color: $colpagos;
+        padding: 20px;
+        grid-column: pagos;
+        display: flex;
+        flex-direction: column;
+        align-items: center;       
+        .pagos__titulo{
+            text-align: center;
+            color: $colpagtitu;
+            font-weight: none;
+            font-size: 2rem;
+            animation-duration: 2s;
+            animation-name: aparecer;
+        }
+        @keyframes aparecer{
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0.8;
+            }
+            100%{
+                opacity: 1;
+            }
+
+        }
+        .pagos__texto{
+            margin: 10px;
+            color: $colpagtexto;
+            line-height: 2rem;
+        }
+        
+    }
+}
+@media (max-width:425px){
+    .contenedor-pago{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        .pagos{
+            flex-direction: column;
+        }
+    }
+}

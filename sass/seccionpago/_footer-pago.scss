@@ -1,0 +1,27 @@
+.footer-pago{
+    background-color: $colbgheafoot;
+    color: $colfooter;
+    padding: 10px;
+    grid-area: footer;
+    margin: 15px 15px;
+    
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1.5rem auto;
+        li{
+            padding: 20px;
+            a{
+                text-decoration: none;
+                color: $colafooter;
+                font-size: 1.5rem;
+                &:hover{
+                    font-weight: bold;
+                    color: $colfoothov;
+                }
+            }
+        }
+    }
+}  

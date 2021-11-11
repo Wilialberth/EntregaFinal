@@ -1,0 +1,58 @@
+.header-pago{
+    background-color: $colbgheafoot;
+    width: 90%;
+    margin: 1.5rem auto;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+         
+    img{
+        width: 10%;
+        border-radius: 50%;
+        margin: 20px;
+    }
+    
+    nav{
+        margin: 0 1.5rem;
+        
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            li{
+                .barra{
+                    text-decoration: none;
+                    padding: 20px;
+                    color: $colbarra;
+                        &:hover{
+                            color: $colhover;
+                            text-decoration: underline;
+                        }
+                }
+            }
+        }
+    }
+}
+@media (max-width:425){
+    .header-pago{
+        flex-direction: column;
+        img{
+            margin-left: 0;
+        }
+        nav{
+            margin-top: 10px;
+            ul{
+                margin-right: 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                .barra{
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    
+}
